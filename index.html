@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Krishna — LinkedIn & GitHub Scanner</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="header">
+    <h1>🔎 LinkedIn & GitHub Scanner</h1>
+    <p class="sub">Quickly check your public GitHub stats and share a neat LinkedIn preview.</p>
+  </header>
+
+  <main class="container">
+    <!-- GitHub Scanner -->
+    <section class="card">
+      <h2>🐙 GitHub Scanner</h2>
+      <form id="gh-form" class="row">
+        <input id="gh-username" type="text" placeholder="KrishnaCodes06" required />
+        <button type="submit">Scan GitHub</button>
+      </form>
+      <div id="gh-error" class="error" hidden></div>
+
+      <div id="gh-results" class="grid" hidden>
+        <div class="panel">
+          <h3>Profile</h3>
+          <div class="profile">
+            <img id="gh-avatar" alt="Avatar"/>
+            <div>
+              <div id="gh-name" class="name"></div>
+              <div id="gh-login" class="muted"></div>
+              <div id="gh-bio" class="muted"></div>
+              <a id="gh-url" class="link" target="_blank" rel="noopener">View on GitHub →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Totals</h3>
+          <ul class="stats">
+            <li><span id="gh-repos">0</span> Public Repos</li>
+            <li><span id="gh-followers">0</span> Followers</li>
+            <li><span id="gh-following">0</span> Following</li>
+            <li><span id="gh-stars">0</span> Stars (across repos)</li>
+            <li><span id="gh-forks">0</span> Forks (across repos)</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>Top Languages</h3>
+          <ul id="gh-langs" class="list"></ul>
+        </div>
+
+        <div class="panel">
+          <h3>Top Repos (by ⭐)</h3>
+          <ul id="gh-top-repos" class="list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- LinkedIn Preview -->
+    <section class="card">
+      <h2>💼 LinkedIn Preview</h2>
+      <form id="li-form" class="row">
+        <input id="li-url" type="url" placeholder="Paste LinkedIn profile URL (e.g., https://www.linkedin.com/in/krishna-patel-...)" required />
+        <button type="submit">Preview</button>
+      </form>
+      <div id="li-error" class="error" hidden></div>
+
+      <div id="li-results" class="panel" hidden>
+        <h3>Public Link</h3>
+        <p class="muted">We don’t scrape LinkedIn (not allowed). This validates and formats your profile link for sharing.</p>
+        <div class="li-preview">
+          <div class="li-icon">in</div>
+          <div>
+            <div id="li-handle" class="name"></div>
+            <a id="li-link" class="link" target="_blank" rel="noopener">Open LinkedIn →</a>
+          </div>
+        </div>
+        <div class="row">
+          <button id="copy-link" type="button">Copy Link</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Krishna • Built with vanilla HTML, CSS & JS</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
